@@ -1,0 +1,114 @@
+/* ======= CONFIGURACIÓN GENERAL ======= */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0a1f3d; /* Azul oscuro */
+  color: #ffffff;
+}
+
+/* ======= ENCABEZADO ======= */
+header {
+  background-color: #081a33;
+  padding: 1em 2em;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* ======= NAVEGACIÓN ======= */
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 2em;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #4da6ff; /* Azul claro al pasar el cursor */
+}
+
+/* ======= SECCIÓN PRINCIPAL ======= */
+main {
+  padding: 2em;
+}
+
+.profile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+}
+
+.profile img {
+  max-width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.info {
+  max-width: 600px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.2em;
+}
+
+h2 {
+  font-size: 1.2em;
+  font-weight: normal;
+  color: #a0c4ff;
+  margin-bottom: 1em;
+}
+
+/* ======= BOTÓN LINKEDIN ======= */
+.linkedin {
+  display: inline-block;
+  background-color: #0077b5;
+  color: white;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 1em;
+}
+
+.linkedin:hover {
+  background-color: #005f8d;
+}
+
+/* ======= TEXTO ======= */
+p {
+  line-height: 1.6;
+}
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    margin-top: 1em;
+  }
+
+  .profile {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile img {
+    margin-bottom: 1em;
+  }
+}
