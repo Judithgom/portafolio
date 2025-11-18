@@ -1,164 +1,335 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Judith GOMEZ Portafolio</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<!-- Animation d’intro -->
-<div id="intro">
-  <div id="name">
-    <span class="letter">P</span>
-    <span class="letter">A</span>
-    <span class="letter">O</span>
-    <span class="letter">L</span>
-    <span class="letter">A</span>
-    <span class="letter">&nbsp;</span>
-    <span class="letter">G</span>
-    <span class="letter">O</span>
-    <span class="letter">M</span>
-    <span class="letter">E</span>
-    <span class="letter">Z</span>
-  </div>
-  <div id="subtitle">PORTFOLIO</div>
-</div>
+/* ======= CONFIGURACIÓN GENERAL ======= */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0a1f3d;
+  color: #ffffff;
+}
+
+/* ======= ENCABEZADO ======= */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; /* Ajusta según el contenido */
+  background-color: #081a33;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+main {
+  margin-top: 80px; /* Compensa la altura del header */
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1cm; /* 1 cm a la izquierda y derecha */
+  margin-top: 0.5cm; 
+}
+.logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 1em; /* en lugar de margin-left */
+  font-weight: 500;
+  transition: color 0.3s ease;
+  
+}
+
+
+.nav-links a:hover {
+  color: #4da6ff;
+}
+
+/* ======= SECCIÓN PRINCIPAL ======= */
+main {
+  padding: 0;
+}
+
+/* ======= FONDO DE ESCALERAS ======= */
+.background-escaleras {
+  width: 100vw;
+  background-image: url("11.png"); /* ← Aquí va tu imagen verde tipo escalera */
+  background-size: cover;
+  background-position: center;
+  height: 470px; /* Altura visible del bandeau */
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* ======= IMAGEN DE PERFIL ======= */
+.profile img {
+  max-width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  margin-top: 0px; /* ← ajuste la valeur selon ce que tu veux */
+
+}
+
+/* ======= INFORMACIÓN ======= */
+.info {
+  max-width: 600px;
+  background-color: rgba(10, 31, 61, 0.7); /* Fondo semitransparente para mejor lectura */
+  padding: 2em;
+  border-radius: 10px;
+  margin-left: 100px;  /* ⬅️ mueve todo a la derecha */
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.2em;
+}
+
+h2 {
+  font-size: 1.2em;
+  font-weight: normal;
+  color: #a0c4ff;
+  margin-bottom: 1em;
+}
+
+.linkedin {
+  display: inline-block;
+  background-color: #0077b5;
+  color: white;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 1em;
+}
+
+.linkedin:hover {
+  background-color: #005f8d;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    margin-top: 1em;
+  }
+
+  .background-escaleras {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile img {
+    margin-bottom: 1em;
+  }
+
+  .info {
+    width: 100%;
+    padding: 1.5em;
+  }
+}
+/* ======= SECCIÓN PROYECTOS ======= */
+.projects {
+  background-color: #ffffff;
+  color: #0a1f3d;
+  padding: 3em 2em;
+  text-align: center;
+}
+
+.projects h2 {
+  font-size: 2em;
+  margin-bottom: 1.5em;
+  color: #0a1f3d;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+}
+
+.project {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 2em;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-weight: bold;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.skills {
+  background-color: #ffffff;
+  color: #0a1f3d;
+  padding: 3em 2em;
+  text-align: center;
+}
+
+.skills h2 {
+  font-size: 2em;
+  margin-bottom: 1.5em;
+  color: #0a1f3d;
+}
+.contact {
+  background-color: #0a1f3d;
+  color: #ffffff;
+  padding: 3em 2em;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  color: #ffffff;
+}
+
+.contact .email {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+.contact .email a {
+  color: #ffffff;
+}
+
+.linkedin-icon {
+  width: 40px;
+  height: 40px;
+  margin-top: 1em;
+  transition: transform 0.3s ease;
+}
+
+.linkedin-icon:hover {
+  transform: scale(1.1);
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colonnes fixes */
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.skill-block {
+  background-color: #0b66c3;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.skill-icon {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.skill-block {
+  background-color: #0b66c3; /* azul original */
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+
+}
+
+
+.project {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 2em;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
 
 
 
-  <!-- Contenu principal masqué au départ -->
-  <div id="main-content" style="display: none;">
+#intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #0a1f3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  z-index: 9999;
+  transition: opacity 1s ease-in-out; /* 👈 fade-out doux */
+}
 
-  <header>
-  <div class="navbar">
-    <div class="logo">Paola GOMEZ</div>
-    <nav class="nav-links">
-      <a href="#">Accueil</a>
-      <a href="#projets">Projets</a>
-      <a href="#competences">Compétences</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+.letter {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #fffff3;
+  opacity: 0;
+  transform: translateY(-100px);
+  animation: fall 0.6s ease-out forwards;
+}
 
-  <main>
-    <section class="profile background-escaleras">
-      <img src="photo.jpeg" alt="Judith GOMEZ">
-      <div class="info">
-        <h1 class="typewriter" id="typewriter-name"></h1>
-        <h2>M2 Didactique de Langue et Ingénierie pédagogique</h2>
-        <a href="https://www.linkedin.com/in/judith-paola-g%C3%B3mez-01b092278/" target="_blank" class="linkedin">LinkedIn</a>
-        <p>
-          Passionnée par l’e-learning, le design et l’évaluation formative, j’ai eu l’occasion d’enseigner, de travailler en communication et de concevoir des dispositifs de formation variés, ce qui m’a toujours poussée à approfondir mes connaissances. Au fil de mon parcours, j’ai développé des compétences en conception pédagogique, création graphique, digital learning et accompagnement des apprenants dans les formations en ligne, ainsi qu’en gestion de projet. Mes travaux m’ont également permis d’explorer la gamification et le storytelling, que j’intègre dans mes projets pour favoriser l’engagement et la motivation des apprenants. 
-        </p>
-      </div>
-    </section>
-  </main>
-      <!-- SECCIÓN MIS PROYECTOS -->
-      <section class="projects">
-        <h2 id="projets">Mes projets</h2>
-        <div class="projects-grid">
-      
-          <!-- Proyecto 1: START-e-FLE -->
-          <div class="project">
-            <h3>START-e-FLE</h3>
-            <iframe src="https://view.genially.com/68cc171a8a20cdd8a1a2c8c4"
-                    width="100%"
-                    height="200"
-                    style="border:none;"
-                    allowfullscreen>
-            </iframe>
-            <p>Un parcours de FLE en ligne conçu pour les grands débutants. Il permet de développer les bases du français avant d’intégrer le cours hybride ou en présentiel au CUEF.</p>
-          </div>
-       <div class="project">
-            <h3>TQuelGenre</h3>
-  <iframe src="https://view.genially.com/68d05ca483e17fafb2a806c1"
-          width="100%"
-          height="200"
-          style="border:none;"
-          allowfullscreen>
-  </iframe>
-  <p>TQuelGenre est un site ludique pour pratiquer les genres grammaticaux en français. Les jeux interactifs aident à maîtriser le masculin et le féminin.</p>
+.letter:nth-child(1) { animation-delay: 0s; }
+.letter:nth-child(2) { animation-delay: 0.2s; }
+.letter:nth-child(3) { animation-delay: 0.4s; }
+.letter:nth-child(4) { animation-delay: 0.6s; }
+.letter:nth-child(5) { animation-delay: 0.8s; }
+.letter:nth-child(6) { animation-delay: 1s; }
+.letter:nth-child(7) { animation-delay: 1.2s; }
+.letter:nth-child(8) { animation-delay: 1.4s; }
+.letter:nth-child(9) { animation-delay: 1.6s; }
+.letter:nth-child(10) { animation-delay: 1.8s; }
+.letter:nth-child(11) { animation-delay: 2s; }
 
-</div>   
-          <!-- Proyecto 2: Écotourisme en France -->
-          <div class="project">
-            <h3>Écotourisme en France</h3>
-            <iframe src="https://view.genially.com/68c50330cb3513909ff78c62"
-                    width="100%"
-                    height="200"
-                    style="border:none;"
-                    allowfullscreen>
-            </iframe>
-            <p>Une découverte du tourisme durable à travers des régions françaises. Les apprenants explorent des pratiques écologiques tout en enrichissant leur vocabulaire et leur culture.</p>
-          </div>
-      
-          <!-- Proyecto 3: Francophonie numérique -->
-          <div class="project">
-            <h3>Base de ressources MJC</h3>
-            <iframe src="https://view.genially.com/68c84f020de733121bd841e8"
-                    width="100%"
-                    height="200"
-                    style="border:none;"
-                    allowfullscreen>
-            </iframe>
-            <p>Une base de données pédagogique conçue pour les animateurs. Elle propose des fiches pratiques, des outils numériques et des activités adaptées pour faciliter l’enseignement du FLE.</p>
-          </div>
-           
-      </section>
-<!-- SECCIÓN COMPÉTENCES -->
-<section class="skills">
-  <h2 id="competences">Mes compétences</h2>
-  <div class="skills-grid">
-  <div class="skill-block">
-    <img src="conception.png" alt="Conception pédagogique" class="skill-icon">
-    Conception pédagogique
-  </div>
-  <div class="skill-block">
-    <img src="Analyse.png" alt="Analyse et recherche" class="skill-icon">
-    Analyse et recherche
-  </div>
-  <div class="skill-block">
-    <img src="desing.png" alt="Design" class="skill-icon">
-    Design
-  </div>
-  <div class="skill-block">
-    <img src="creation-de-contenu.png" alt="Travail d'équipe" class="skill-icon">
-    Création de ressources pédagogiques
-  </div>
-  <div class="skill-block">
-    <img src="console.png" alt="Gamification" class="skill-icon">
-    Gamification
-  </div>
-  <div class="skill-block">
-    <img src="evaluationn.png" alt="Évaluation formative" class="skill-icon">
-    Évaluation formative
-  </div>
-  <div class="skill-block">
-    <img src="marketing.png" alt="Création de ressources pédagogiques" class="skill-icon">
-    Marketing de la formation
-  </div>
-  <div class="skill-block">
-    <img src="travail.png" alt="Marketing de la formation" class="skill-icon">
-     Travail d'équipe
-  </div>
-</div>
+@keyframes fall {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+#main-content {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in-out; /* 👈 fade-in doux */
+}
 
-<!-- SECCIÓN CONTACTO -->
-<section class="contact">
-  <h2 id="contact">Me contacter</h2>
-  <p class="email">📧 gnpaola17@gmail.com</a></p>
-  <a href="https://www.linkedin.com/in/judith-paola-g%C3%B3mez-01b092278/" target="_blank">
-    <img src="linkedin-icon.png" alt="LinkedIn" class="linkedin-icon">
-  </a>
+#subtitle {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #fffff3;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  margin-top: 20px;
+}
 
-</section>
-</p>Copyright © 2025 by Paola Gómez | Tous droits réservés |</p>
-<script src="script.js"></script>
-</body>
-</html>
 
 
 
